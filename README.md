@@ -31,7 +31,7 @@ scratch-render依赖了scratch-svg-renderer，scratch-svg-renderer又依赖了sc
 
 为了少子工程，决定将scratch-render和scratch-svg-render二合一，修改如下
 
-2. scratch-render/package.json添加scratch-svg-renderer用到的依赖
+1. scratch-render/package.json添加scratch-svg-renderer用到的依赖
 
    ```javascript
    "base64-js": "1.2.1",
@@ -39,15 +39,15 @@ scratch-render依赖了scratch-svg-renderer，scratch-svg-renderer又依赖了sc
    "scratch-svg-renderer": "删除掉"
    ```
 
-3. 将scratch-svg-renderer/src拷贝到scratch-render/src目录下，重命名为scratch-svg-renderer
+2. 将scratch-svg-renderer/src拷贝到scratch-render/src目录下，重命名为scratch-svg-renderer
 
-4. 改scratch-renderer/src/SVGSkin.js第四行
+3. 改scratch-renderer/src/SVGSkin.js第四行
 
    ```javascript
    const SvgRenderer = require('./scratch-svg-renderer').SVGRenderer;
    ```
 
-5. 改了scratch-renderer/src/scratch-svg-renderer/font-inliner.js文件，具体请参考该文件
+4. 改了scratch-renderer/src/scratch-svg-renderer/font-inliner.js文件，具体请参考该文件
 
    
 
